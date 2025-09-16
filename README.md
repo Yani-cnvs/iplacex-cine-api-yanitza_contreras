@@ -1,2 +1,1 @@
-# iplacex-cine-api-yanitza_contreras
-API REST Cine con Express
+API REST Express para administración de películas favoritas de empleados de IPLACEX
