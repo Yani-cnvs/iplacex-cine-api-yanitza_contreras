@@ -75,7 +75,7 @@ async function handleDeletePeliculaRequest(req, res) {
         }
     }
 
-    export default {
+export default {
     handleInsertPeliculaRequest,
     handleGetPeliculasRequest,
     handleGetPeliculaByIdRequest,

@@ -1,5 +1,6 @@
-import { ObjectId}  from "mongodb";
+import { ObjectId } from "mongodb";
 import Client from "../common/db.js";
+import { Actor } from "./actor.js";
 
 const ActorCollection = Client.db('cine').collection('actores');
 const PeliculaCollection = Client.db('cine').collection('peliculas');
@@ -7,7 +8,7 @@ const PeliculaCollection = Client.db('cine').collection('peliculas');
 
 async function handleInsertActorRequest(req, res) {
     let data = req.body;
-    let actor = actor
+    let actor = { ...Actor };
 
     actor._id = data._id
     actor.idPelicula = data.idPelicula
@@ -16,7 +17,7 @@ async function handleInsertActorRequest(req, res) {
     actor.estaRetirado = data.estaRetirado
     actor.premios = data.premios}
 
-    await ActorCollection.insertOne(actor)
+    await ActorCollection.insertOne(Actor)
     .then((data) => {
         if(data === null) return res.status(400).send('Error al guardar.')
 })
@@ -28,7 +29,7 @@ async function handleGetActoresRequest(req, res) {
     .catch((e) => { return res.status(500).send({ error: e }) })
 }
 
-async function hangleGetActorByIdRequest(req, res) {
+async function handleGetActorByIdRequest(req, res) {
     let id = req.params.id;
 
     try {
@@ -62,3 +63,10 @@ async function handleGetActoresByPeliculaIdRequest(req, res) {
         return res.status(500).send('Error, vuelva a intentar.');
     }
 }
+
+export default {
+    handleInsertActorRequest,
+    handleGetActoresRequest,
+    handleGetActorByIdRequest,
+    handleGetActoresByPeliculaIdRequest
+};

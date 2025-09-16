@@ -1,10 +1,10 @@
 import {  BSONType, ObjectId } from "mongodb";
 
 export const Actor = {
-    _id: ObjectId,
-    idPelicula: String,
-    nombre: String,
-    edad: int,
-    estaRetirado: bool,
-    premios: array
-}
+    _id: null,
+    idPelicula: "",
+    nombre: "",
+    edad: 0,
+    estaRetirado: false,
+    premios: []
+};

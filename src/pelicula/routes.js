@@ -7,6 +7,6 @@ peliculaRoutes.post('/pelicula', controller.handleInsertPeliculaRequest);
 peliculaRoutes.get('/peliculas', controller.handleGetPeliculasRequest);
 peliculaRoutes.get('/pelicula/:id', controller.handleGetPeliculaByIdRequest);
 peliculaRoutes.put('/pelicula/:id', controller.handleUpdatePeliculaByIdRequest);
-peliculaRoutes.delete('/pelicula/:id', controller.handleDeletePeliculaByIdRequest);
+peliculaRoutes.delete('/pelicula/:id', controller.handleDeletePeliculaRequest);
 
 export default peliculaRoutes;
