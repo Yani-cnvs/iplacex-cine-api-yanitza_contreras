@@ -1,5 +1,5 @@
 import express from 'express';
-import controller from './pelicula.controller.js';
+import controller from './controller.js';
 
 const peliculaRoutes = express.Router();
 
