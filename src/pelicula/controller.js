@@ -26,7 +26,7 @@ async function handleGetPeliculasRequest(req, res) {
     .catch((e) => { return res.status(500).send({ error: e }) })
 }
 
-async function hangleGetPeliculaByIdRequest(req, res) {
+async function handleGetPeliculaByIdRequest(req, res) {
     let id = req.params.id;
 
     try {
@@ -74,3 +74,11 @@ async function handleDeletePeliculaRequest(req, res) {
             return res.status(400).send('Id mal formado');
         }
     }
+
+    export default {
+    handleInsertPeliculaRequest,
+    handleGetPeliculasRequest,
+    handleGetPeliculaByIdRequest,
+    handleUpdatePeliculaByIdRequest,
+    handleDeletePeliculaRequest
+};
